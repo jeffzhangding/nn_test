@@ -1,22 +1,15 @@
 <template>
-	<view class="content">
-		<!-- <image class="logo" src="/static/logo.png"></image>
-		<view class="text-area">
-			<text class="title">{{title}}</text>
-		</view> -->
-		
-		<button  @click="getAction">test</button>
-		
+	<view class="content">		
+		<!-- <button  @click="getAction">test</button> -->
 		<view class="search">
 			<input :value="inputKeys" maxlength="200" class="search_input" @blur="inputSearchKeys" @focus="clearSearchKeys()"/>
-			<button class="search_button" @click="searchKeys">搜索</button>
+			<button  @click="searchKeys" style="display: flex;align-items: center;">搜索</button>
 		</view>
 		
-		<view >
-			<view class="uni-title uni-common-mt label_front">常用核查网站:</view>
+		<view class="check_box_div">
+			<view class="label_front">常用核查网站:</view>
 			<view>
-				<checkbox-group class="check_box_p" @change="checkboxChange">
-								
+				<checkbox-group class="check_box_p" @change="checkboxChange">			
 					<label>
 						<checkbox value="wusong" style="transform:scale(0.7)" /> 无讼
 					</label>
@@ -31,9 +24,8 @@
 					</label>
 				</checkbox-group>
 			</view>
-		</view>
-		<view class="uni-title uni-common-mt label_front">查询企业信息类网站:</view>
-		<view >
+		
+			<view class="label_front">查询企业信息类网站:</view>
 			
 			<view>
 				<checkbox-group class="check_box_p" @change="checkboxChange2">
@@ -68,9 +60,10 @@
 				</checkbox-group>
 			</view>
 		</view>
-		
+		<!-- <view style="flex-grow: 1;"></view> -->
 		
 	</view>
+	
 </template>
 
 <script>
@@ -251,25 +244,15 @@
 </script>
 
 <style>
+
 	.content {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
+		background-color: #333333;
+		color: #C8C7CC;
+		/* background-size: cover; */
+		/* flex-grow: 1; */
+		height: 400rpx;
 	}
 
 	.title {
@@ -280,35 +263,44 @@
 	.search {
 		display: flex;
 		flex-direction: row;
-		margin-top: 100rpx;
-	}
-	
-	.search_button {
-		align-items: flex-start;
-
+		margin-top: 60rpx;
+		align-self: center;
+		justify-content: center;
 	}
 	
 	.search_input {
 		outline-style: none ;
 		border: 1px solid #ccc; 
 		border-radius: 3px;
-		padding: 8rpx;
-		width: 320px;
+		padding: 6rpx;
+		width: 620px;
 		font-size: 24px;
 	}
 	
-	.check_box_div {
-		margin-top: 100rpx;
-		flex-direction: row;
-	}
-	
 	.check_box_p {
-		font-size: 15rpx;
-		align-items: flex-start;
-		flex-direction: row;
+		font-size: 5rpx;
+		display: flex;
+		/* align-items: flex-start; */
+		flex-direction: column;
 	}
 	.label_front {
-		font-size: 15rpx;
+		font-size: 8rpx;
+		margin-top: 15rpx;
 	}
+	.check_box_div {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		
+		position: relative;
+		/* left: 200rpx; */
+		margin-left: 270rpx;
+		margin-right: 150rpx;
+		flex-wrap: wrap;
+		/* width: 1000rpx; */
+		/* margin: 100rpx; */
+	}
+	
 	
 </style>
